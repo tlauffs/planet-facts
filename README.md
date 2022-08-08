@@ -1,46 +1,53 @@
-# planet-facts
+# Frontend Mentor - Planets fact site solution
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a solution to the [Planets fact site challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/planets-fact-site-gazqN8w_f). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Recommended IDE Setup
+## Table of contents
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+- [Author](#author)
 
-## Type Support for `.vue` Imports in TS
+## Overview
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+### The challenge
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+Users should be able to:
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- View each planet page and toggle between "Overview", "Internal Structure", and "Surface Geology"
 
-## Customize configuration
+### Screenshot
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+![](./the-panets-screenshot.png)
 
-## Project Setup
+### Links
 
-```sh
-npm install
-```
+- Solution URL: [https://github.com/tlauffs/planet-facts](https://github.com/tlauffs/planet-facts)
+- Live Site URL: [https://theplanets-tlauffs.netlify.app/](https://theplanets-tlauffs.netlify.app/)
 
-### Compile and Hot-Reload for Development
+## My process
 
-```sh
-npm run dev
-```
+### Built with
 
-### Type-Check, Compile and Minify for Production
+- SCSS
+- Typescript
+- [Vue](https://vuejs.org/) - JS library
 
-```sh
-npm run build
-```
 
-### Lint with [ESLint](https://eslint.org/)
+### What I learned
 
-```sh
-npm run lint
-```
+I went with a Typescript approch to complete this Project. I learned alot about Vue data, class and style-binding. This was also my first Project using SCSS.
+
+## Author
+
+- Website - [Tim Lauffs](https://timlauffs.com/)
+- Frontend Mentor - [@tlauffs](https://www.frontendmentor.io/profile/tlauffs)
+- Linkedin - [@timlauffs](https://www.linkedin.com/in/tim-lauffs-a8782421b/)
+
