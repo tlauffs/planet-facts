@@ -3,7 +3,7 @@ import { ref, watch } from "vue";
 import jsonData from "./data.json";
 import MainComponent from "./components/Main.vue";
 
-const tab = ref(0);
+const tab = ref(2);
 const openNav = ref(false);
 const planetColor = ref(jsonData[tab.value].color);
 const planetList = [
