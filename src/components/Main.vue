@@ -120,7 +120,7 @@ const innerHtmlContent = computed(() => {
           >
             <h3>
               <span class="opace" style="margin-right: 2rem">02</span>
-              STRUCTURE
+              INTERNAL STRUCTURE
             </h3>
           </button>
         </div>
@@ -132,6 +132,7 @@ const innerHtmlContent = computed(() => {
           >
             <h3>
               <span class="opace" style="margin-right: 2rem">03</span>SURFACE
+              GEOLOGY
             </h3>
           </button>
         </div>
