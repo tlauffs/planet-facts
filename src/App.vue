@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { ref, onMounted, watch } from "vue";
+import { ref, watch } from "vue";
 import jsonData from "./data.json";
+import MainComponent from "./components/Main.vue";
 
 const tab = ref(0);
 const openNav = ref(false);
 const planetColor = ref(jsonData[tab.value].color);
-const activeCategory = ref("overview");
 const planetList = [
   "mercury",
   "venus",
@@ -25,17 +25,6 @@ function styles(i: number) {
   return {
     "--color-hover": jsonData[i].color,
   };
-}
-
-function imgpath(){
-  switch(activeCategory.value) {
-    case 'internal':
-      return jsonData[tab.value].images.internal;
-    case 'geology':
-      return jsonData[tab.value].images.geology;
-    default:
-      return jsonData[tab.value].images.overview;
-  }
 }
 </script>
 
@@ -61,62 +50,7 @@ function imgpath(){
   </header>
   <div class="divider"></div>
   <div>
-    <div class="main-grid">
-      <div class="planet-img-wrapper">
-        <img :src="imgpath()" alt="" class="planet-img" />
-      </div>
-      <div class="planet-info">
-        <h1>{{ jsonData[tab].name }}</h1>
-        <!--<p>{{ jsonData[tab].overview.content }}</p>-->
-        <p>{{ jsonData[tab].overview.content }}</p>
-        <p>
-          <span class="opace"
-            >Source :
-            <a target="_blank" v-bind:href="jsonData[tab].overview.source"
-              >Wikipedia
-              <img
-                style="margin-bottom: -0.1rem; margin-left: 0.5rem"
-                src="./assets/icon-source.svg"
-                alt="" /></a
-          ></span>
-        </p>
-        <div>
-          <button
-            class="btn-default"
-            @click="activeCategory = 'overview'"
-            :class="{ active: activeCategory === 'overview' }"
-          >
-            <h3>
-              <span class="opace" style="margin-right: 2rem">01</span>OVERVIEW
-            </h3>
-          </button>
-        </div>
-        <div>
-          <button
-            class="btn-default"
-            @click="activeCategory = 'internal'"
-            :class="{ active: activeCategory === 'internal' }"
-          >
-            <h3>
-              <span class="opace" style="margin-right: 2rem">02</span>INTERNAL
-              STRUCTURE
-            </h3>
-          </button>
-        </div>
-        <div>
-          <button
-            class="btn-default"
-            @click="activeCategory = 'geology'"
-            :class="{ active: activeCategory === 'geology' }"
-          >
-            <h3>
-              <span class="opace" style="margin-right: 2rem">03</span>SURFACE
-              GEOLOGY
-            </h3>
-          </button>
-        </div>
-      </div>
-    </div>
+    <MainComponent :tab="tab" :planetColor="planetColor" />
   </div>
   <transition name="slide">
     <div class="sidenav" v-if="openNav">
@@ -149,10 +83,6 @@ function imgpath(){
 
 <style scoped lang="scss">
 @import "./assets/settings.scss";
-.planet-color {
-  color: v-bind("planetColor");
-}
-
 /* navbar styles */
 
 .header {
@@ -219,35 +149,6 @@ function imgpath(){
   margin-left: auto;
 }
 
-/* layout styles */
-
-.main-grid {
-  display: grid;
-  grid-template-columns: 60vw 40vw;
-  margin-top: 8rem;
-}
-
-.planet-info {
-  max-width: 22rem;
-  margin-right: 8rem;
-}
-
-.planet-img-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.planet-img {
-  max-width: 90%;
-}
-
-/* buttons */
-
-.active {
-  background-color: v-bind("planetColor") !important;
-  border: 1px v-bind("planetColor") solid !important;
-}
-
 /* media queries */
 
 @media only screen and (max-width: $md) {
@@ -255,11 +156,13 @@ function imgpath(){
     flex-direction: column;
     align-items: center;
   }
-  .btn-nav-padding {
-    padding: 1rem 0.5rem;
+  .btn-nav-desktop {
+    padding: 1rem 0.75rem;
   }
-  .main-grid {
-    grid-template-columns: 1fr;
+  .btn-nav:focus,
+  .btn-nav:hover {
+    opacity: 1;
+    box-shadow: inset 0 -0.25rem var(--color-hover);
   }
 }
 

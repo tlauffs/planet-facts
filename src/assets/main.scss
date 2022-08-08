@@ -82,6 +82,24 @@ h6 {
   text-transform: uppercase;
 }
 
+@media only screen and (max-width: $md) {
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: $sm) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 1.25rem;
+  }
+}
+
 a {
   color: white;
 }
@@ -119,7 +137,6 @@ a {
   justify-content: flex-start;
   transition: all 250ms ease-in-out;
 }
-
 
 .btn-default:hover,
 .btn-default:focus {
