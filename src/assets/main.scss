@@ -1,23 +1,36 @@
-$base-color: #070724;
-$gray: #38384F;
-$light-gray: #838391;
+@import "./settings.scss";
 
-body {
-  font-family: 'League Spartan', sans-serif;
-  font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.5625rem;
+body,
+html {
+  font-family: "League Spartan", sans-serif;
   background-image: url("./background-stars.svg");
-  background-position-x: center ;
-  background-position-y: center ;
+  background-position-x: center;
+  background-position-y: center;
   background-size: max(110vw, 95.75rem);
   background-color: $base-color;
   color: white;
+  margin: 0;
+  padding: 0;
 }
 
+p {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.5625rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0.1rem 0 0 0;
+  padding: 0;
+}
 
 h1 {
-  font-family: 'Antonio', sans-serif;
+  font-family: "Antonio", sans-serif;
   font-weight: 500;
   font-size: 5rem;
   line-height: 6.4375rem;
@@ -25,7 +38,7 @@ h1 {
 }
 
 h2 {
-  font-family: 'Antonio', sans-serif;
+  font-family: "Antonio", sans-serif;
   font-weight: 500;
   font-size: 2.5rem;
   line-height: 3.25rem;
@@ -34,7 +47,7 @@ h2 {
 }
 
 h3 {
-  font-family: 'League Spartan', sans-serif;
+  font-family: "League Spartan", sans-serif;
   font-weight: 700;
   font-size: 0.75rem;
   line-height: 1.5625rem;
@@ -43,10 +56,73 @@ h3 {
 }
 
 h4 {
-  font-family: 'League Spartan', sans-serif;
+  font-family: "League Spartan", sans-serif;
   font-weight: 700;
   font-size: 0.6875rem;
   line-height: 1.5625rem;
   letter-spacing: 0.0625rem;
   text-transform: uppercase;
+}
+
+h5 {
+  font-family: "Antonio", sans-serif;
+  font-weight: 500;
+  font-size: 1.75rem;
+  line-height: 5rem;
+  letter-spacing: -0.065625rem;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  line-height: 1rem;
+  letter-spacing: 0.085rem;
+  text-transform: uppercase;
+}
+
+a {
+  color: white;
+}
+
+.opace {
+  opacity: 0.5;
+}
+
+.divider {
+  border-bottom: 1px white solid;
+  opacity: 0.2;
+  width: 100%;
+}
+
+/* buttons */
+
+.btn-nav {
+  outline: none;
+  border: none;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: all 250ms;
+}
+
+.btn-default {
+  background-color: transparent;
+  border: 1px rgba($color: white, $alpha: 0.2) solid;
+  padding: 0.5rem 2rem;
+  color: white;
+  width: 100%;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: all 250ms ease-in-out;
+}
+
+
+.btn-default:hover,
+.btn-default:focus {
+  background-color: $gray;
+  border: 1px $gray solid;
 }
