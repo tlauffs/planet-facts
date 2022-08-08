@@ -3,8 +3,14 @@ import { computed, ref, toRefs } from "vue";
 import jsonData from "../data.json";
 
 const props = defineProps({
-  tab: Number,
-  planetColor: String,
+  tab: {
+    type: Number,
+    required: true,
+  },
+  planetColor: {
+    type: String,
+    required: true,
+  },
 });
 
 const activeCategory = ref("overview");
@@ -68,7 +74,7 @@ const innerHtmlContent = computed(() => {
   <div class="main-grid">
     <div class="planet-img-wrapper">
       <transition name="rotate">
-          <img :src="img" :key="img" alt="" class="planet-img" />
+        <img :src="img" :key="img" alt="" class="planet-img" />
       </transition>
       <transition name="fade-in-delay">
         <div v-if="imgGeologyShow" class="imgGeology">
