@@ -38,7 +38,9 @@ function styles(i: number) {
           @click="tab = i"
           :style="styles(i)"
         >
-          <h4>{{ planet }}</h4>
+          <span>
+            <h4>{{ planet }}</h4>
+          </span>
         </button>
       </div>
     </div>
